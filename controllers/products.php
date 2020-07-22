@@ -25,7 +25,7 @@
             if(move_uploaded_file($_FILES['imagen']['tmp_name'], $path)) {
                 ProductsModel::EditProducts($_POST['name'],$_POST['units'],$_POST['price'],$path,$_POST['category'],$_POST['description'],$_POST['origin'],$_POST['provider'],$_POST['id']);
             } else{
-                echo "Ha ocurrido un error, trate de nuevo!";       
+                 ProductsModel::EditProducts($_POST['name'],$_POST['units'],$_POST['price'],$path,$_POST['category'],$_POST['description'],$_POST['origin'],$_POST['provider'],$_POST['id']);
             }
         }
 

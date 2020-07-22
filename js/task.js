@@ -1,6 +1,6 @@
 $(document).ready(function() {  
 
-  let URLDEFINE = "http://localhost/WEB/Aenima/";
+  let URLDEFINE = "http://localhost/WEB/aenima/";
 
   complete(0,5);
 
@@ -33,7 +33,7 @@ $(document).ready(function() {
             <td>${task.name}</td>
             <td>${task.units}</td>
             <td>${task.price}</td>
-            <td><img width="80" height="80" src="${URLDEFINE}${task.photo} ?> "></td>
+            <td><img width="80" height="80" src="${URLDEFINE}${task.photo}?>"></td>
             <td>${task.category}</td>
             <td>${task.description}</td>
             <td>${task.origin}</td>
@@ -58,7 +58,9 @@ $(document).ready(function() {
         }
         } 
     })
-  };
+  }
+  
+
 
 //Add
 $('#frmSubirImagen').submit(function () {
@@ -71,7 +73,7 @@ $('#frmSubirImagen').submit(function () {
         url=URLDEFINE+'products/edit/';
       }
 
-      var frmData = new FormData;
+      var frmData = new FormData();
       frmData.append("imagen",$("input[name=imagen]")[0].files[0]);
       frmData.append("name", $('#name').val());
       frmData.append("units", $('#units').val());
@@ -163,7 +165,7 @@ $('#frmSubirImagen').submit(function () {
                       <td>${task.name}</td>
                       <td>${task.units}</td>
                       <td>${task.price}</td>
-                      <td><img width="80" height="80" src="${URLDEFINE}${task.photo} ?> "></td>
+                      <td><img width="80" height="80" src="${URLDEFINE}${task.photo}?>"></td>
                       <td>${task.category}</td>
                       <td>${task.description}</td>
                       <td>${task.origin}</td>
@@ -189,9 +191,13 @@ $('#frmSubirImagen').submit(function () {
 
         var tip = $('#tip').val();
         url=URLDEFINE+'products/edit/';
-
-        var frmData = new FormData;
-        frmData.append("imagen",$("input[name=imagens]")[0].files[0]);
+        
+        var frmData = new FormData();
+          if($("input[name=imagens]")[0].files[0]===null){
+            frmData.append("imagen", $('#imagens').val());
+        }else{
+            frmData.append("imagen",$("input[name=imagens]")[0].files[0]);
+        }
         frmData.append("id", $('#id').val());
         frmData.append("name", $('#a').val());
         frmData.append("units", $('#u').val());
@@ -222,4 +228,3 @@ $('#frmSubirImagen').submit(function () {
 
   
   });
-  

@@ -1,6 +1,6 @@
 <?php
 
-require_once 'controllers/error.php';
+require_once '../aenima/controllers/error.php';
 
     class App{  
 
@@ -23,7 +23,7 @@ require_once 'controllers/error.php';
 
             // method_exists() faltando validar 
             
-            $archivoController = 'controllers/' . $url[0] . '.php';
+            $archivoController = '../aenima/controllers/' . $url[0] . '.php';
 
             if(file_exists($archivoController)){
                 require_once $archivoController;
