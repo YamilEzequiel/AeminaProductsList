@@ -7,5 +7,6 @@
     define('CHARSET','utf8mb4');
     define('URL','http://localhost/WEB/aenima/');
     define('IMGFOLDER','http://localhost/WEB/aenima/public/images/products/');
+    
 
 ?>

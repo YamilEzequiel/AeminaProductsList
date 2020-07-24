@@ -2,6 +2,7 @@ $(document).ready(function() {
 
   let URLDEFINE = "http://localhost/WEB/aenima/";
 
+
   complete(0,5);
 
   //Pagination
